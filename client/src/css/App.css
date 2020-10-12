@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100vh;
+  background: #ad6f52;
+}
+
+.App .logIn {
+  width: 60%;
+  height: 350px;
+  border: 1px solid #00b7ff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.App .logIn .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .logIn input {
+  margin: 10px;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #fff;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 1.1rem;
+  border: 1px solid #00b7ff;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+.App .logIn input::-webkit-input-placeholder {
+  color: #292727;
+  opacity: 0.4;
+}
+
+.App .logIn input:-ms-input-placeholder {
+  color: #292727;
+  opacity: 0.4;
+}
+
+.App .logIn input::-ms-input-placeholder {
+  color: #292727;
+  opacity: 0.4;
+}
+
+.App .logIn input::placeholder {
+  color: #292727;
+  opacity: 0.4;
+}
+
+.App .logIn button {
+  width: 150px;
+  height: 40px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin: 10px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  background-color: #5c9fd3;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 5px;
+}
+
+.App .logIn button:hover {
+  cursor: pointer;
+  background-color: #339cec;
+}
+/*# sourceMappingURL=App.css.map */

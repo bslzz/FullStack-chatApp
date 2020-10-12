@@ -1,0 +1,57 @@
+@import './variables';
+@import './flexCenter';
+
+.App {
+  font-family: $fontFamily;
+  @include flexCenter(row);
+  height: 100vh;
+  background: $backgroundHome;
+  .logIn {
+    width: 60%;
+    height: 350px;
+    border: 1px solid $borderBackground;
+    border-radius: 10px;
+    @include flexCenter(column);
+    box-shadow: $boxShadow;
+    .inputs {
+      @include flexCenter(column);
+    }
+
+    input {
+      margin: 10px;
+      padding: 5px;
+      background-color: transparent;
+      border-radius: 5px;
+      color: #fff;
+      height: 40px;
+      width: 100%;
+      outline: none;
+      font-size: 1.1rem;
+      border: 1px solid $borderBackground;
+      box-shadow: $boxShadow;
+      letter-spacing: 2px;
+      &::placeholder {
+        color: rgb(41, 39, 39);
+        opacity: 0.4;
+      }
+    }
+    button {
+      width: 150px;
+      height: 40px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      margin: 10px;
+      box-shadow: $boxShadow;
+      background-color: #5c9fd3;
+      color: #fff;
+      letter-spacing: 2px;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: #339cec;
+      }
+    }
+  }
+}
