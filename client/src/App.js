@@ -6,19 +6,42 @@ let socket;
 const CONNECTION_PORT = 'localhost:5000';
 
 const App = () => {
+  //before login states
   const [loggedIn, setLoggedIn] = useState(false);
 
   const [room, setRoom] = useState('');
   const [userName, setUserName] = useState('');
 
+  //after login
+  const [message, setMessage] = useState('');
+  const [messageList, setMessageList] = useState([]);
+
   useEffect(() => {
     socket = io(CONNECTION_PORT);
-  }, [CONNECTION_PORT]);
+  }, []);
 
-  const connetToRoom = () => {
+  useEffect(() => {
+    socket.on('receive_message', (data) => {
+      console.log(data);
+      setMessageList([...messageList, data]);
+    });
+  }, []);
+
+  const connetToRoom = async () => {
+    setLoggedIn(true);
     //whenever you want to send the data use socket.emit
     //'join_room' used in the backend, room is the data
-    socket.emit('join_room', room);
+    await socket.emit('join_room', room);
+  };
+
+  const sendMessage = async () => {
+    let messageContent = {
+      room,
+      content: { author: userName, message },
+    };
+    await socket.emit('send_message', messageContent);
+    setMessageList([...messageList, messageContent.content]);
+    setMessage('');
   };
 
   return (
@@ -40,7 +63,30 @@ const App = () => {
           <button onClick={connetToRoom}>Enter Chat</button>
         </div>
       ) : (
-        <h1>you are logged in</h1>
+        <div className="chatContainer">
+          <div className="messages">
+            {messageList.map((val, key) => {
+              return (
+                <div
+                  className="messageContainer"
+                  id={val.author == userName ? 'you' : 'other'}
+                >
+                  <div className="messageBox" key={key}>
+                    {val.author} : {val.message}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="messageInputs">
+            <input
+              type="text"
+              placeholder="Message"
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
       )}
     </div>
   );
