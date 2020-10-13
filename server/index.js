@@ -29,6 +29,11 @@ io.on('connection', (socket) => {
     console.log(`User joined room: ${data}`);
   });
 
+  //receive message from frontend
+  socket.on('send_message', (data) => {
+    socket.to(data.room).emit('receive_message', data.content);
+  });
+
   //disconnect socket
   socket.on('disconnect', () => {
     console.log('User Disconnected');
