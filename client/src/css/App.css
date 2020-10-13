@@ -22,7 +22,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   height: 100vh;
-  background: #ad6f52;
+  background: rgba(15, 250, 179, 0.459);
 }
 
 .App .logIn {
@@ -118,5 +118,68 @@
 .App .logIn button:hover {
   cursor: pointer;
   background-color: #339cec;
+}
+
+.App .chatContainer {
+  width: 60%;
+  height: 350px;
+  border: 1px solid #00b7ff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.App .chatContainer .messages {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+  width: 100%;
+  background-color: #63b7bd;
+}
+
+.App .chatContainer .messageInputs {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .chatContainer .messageInputs input {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+.App .chatContainer .messageInputs button {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  background: lightblue;
+  color: #0457f0;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+}
+
+.App .chatContainer .messageInputs button:hover {
+  cursor: pointer;
+  background: #07b7f1;
 }
 /*# sourceMappingURL=App.css.map */
