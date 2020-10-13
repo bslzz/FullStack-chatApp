@@ -20,15 +20,17 @@ const server = app.listen(PORT, () => console.log(`Server running at ${PORT}`));
 
 //socket connection
 io = socket(server);
-io.on('connection', (socket) => console.log(socket.id));
+io.on('connection', (socket) => {
+  console.log(socket.id);
 
-//create socket room
-socket.on('join_room', (data) => {
-  socket.join(data);
-  console.log(`User joined room: ${data}`);
-});
+  //create socket room
+  socket.on('join_room', (data) => {
+    socket.join(data);
+    console.log(`User joined room: ${data}`);
+  });
 
-//disconnect socket
-socket.on('disconnect', () => {
-  console.log('User Disconnected');
+  //disconnect socket
+  socket.on('disconnect', () => {
+    console.log('User Disconnected');
+  });
 });
