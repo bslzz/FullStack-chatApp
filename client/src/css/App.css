@@ -22,7 +22,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   height: 100vh;
-  background: rgba(15, 250, 179, 0.459);
+  background: rgba(42, 51, 70, 0.459);
 }
 
 .App .logIn {
@@ -144,6 +144,28 @@
   background-color: #63b7bd;
 }
 
+.App .chatContainer .messages .messageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.App .chatContainer .messages .messageContainer .messageBox {
+  width: 300px;
+  height: 35px;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 .App .chatContainer .messageInputs {
   -webkit-box-flex: 20%;
       -ms-flex: 20%;
@@ -181,5 +203,25 @@
 .App .chatContainer .messageInputs button:hover {
   cursor: pointer;
   background: #07b7f1;
+}
+
+.App #you {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.App #you .messageBox {
+  background: #00a2ff;
+}
+
+.App #other {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App #other .messageBox {
+  background: #34db42;
 }
 /*# sourceMappingURL=App.css.map */
